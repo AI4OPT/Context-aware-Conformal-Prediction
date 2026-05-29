@@ -62,7 +62,7 @@ def parse_args() -> argparse.Namespace:
                        "miso_zones_copula", "spp_zones_copula", "wind_test",
                    ])
     p.add_argument("--methods", nargs="+", required=True,
-                   help="Methods to evaluate, e.g. NREL CQR NexCP KMeans KNN Kernel HopCPT Adaptive FEA")
+                   help="Methods to evaluate, e.g. NREL CQR NexCP KMeans KNN Kernel HopCPT Adaptive")
     p.add_argument("--level", type=float, default=0.9,
                    help="Confidence level for interval bounds in the CSV (e.g. 0.9 → 90%% PI).")
     p.add_argument("--covariates", nargs="+", default=None,
@@ -206,7 +206,7 @@ def collect_site_intervals(
                 _n_trials = n_trials if strategy == "random" else None
                 tune_override = None
 
-            cov_flexible_methods = {"kmeans", "knn", "kernel", "hopcpt", "fea"}
+            cov_flexible_methods = {"kmeans", "knn", "kernel", "hopcpt"}
             if mkey in cov_flexible_methods:
                 cov_dependent = bool(cov_blocks and cov_names_allowed)
                 candidate_subsets = (

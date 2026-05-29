@@ -15,7 +15,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--exp_level", required=True,
                    choices=["miso_sites", "miso_zones", "miso_system", "system_intra_1h", "system_intra_2h","spp_load_system", "wind_system" , "nyiso_system" , "spp_system" , "spp_sites" , "ercot_system",'spp_zones' , "ercot_sites" , "spp_copula" , "miso_copula" , "ercot_copula" , "spp_copula_zones","miso_copula_zones", "ercot_copula_zones","miso_zones_copula",'spp_zones_copula','wind_test','miso_load_system'])
     p.add_argument("--methods", nargs="+", required=True,
-                   help="Methods to evaluate, e.g., NREL CQR Kmeans KNN Kernel NexCP HopCPT Adaptive FEA")
+                   help="Methods to evaluate, e.g., NREL CQR KMeans KNN Kernel NexCP HopCPT Adaptive")
     p.add_argument("--covariates", nargs="+", default=None,
                    help="Superset of covariate blocks to load (we may tune over subsets).")
     p.add_argument("--test_window_days", type=int, default=1)

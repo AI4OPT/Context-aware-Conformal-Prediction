@@ -15,9 +15,7 @@ Conformal prediction framework for probabilistic energy forecasting, evaluated o
 | `kmeans` | `KMeansConformalizer` | Clusters calibration covariates; applies cluster-specific quantiles |
 | `knn` | `KNNConformalizer` | $k$-nearest-neighbor weighted conformity quantiles |
 | `kernel` | `KernelConformalizer` | Kernel-weighted conformity quantiles (RBF, Laplacian, linear, poly) |
-| `periodic` | `PeriodicCovariateConformalizer` | FFT-detects dominant periods in calibration scores; encodes time position as sinusoidal features; routes to kmeans/knn/kernel backend — no external covariates required |
 | `hopcpt` | `HopCPTLearnedConformalizer` | Learns covariate embeddings via Hopfield/attention; weighted conformity quantiles |
-| `fea` | `FEACPTConformalizer` | Frequency-Enhanced Attention — FFT-based cross-attention over calibration keys; optional Winkler loss fine-tuning |
 
 All methods share a unified `BaseConformalizer` interface: `fit(actual, forecast, past_cov)` + `batch_forecast(forecasts, future_cov)`.
 
@@ -34,9 +32,7 @@ conformal/          # Conformalizer implementations
   kmeans.py
   knn.py
   kernel.py
-  periodic.py
   hopcpt_learned.py
-  feacpt.py
   factory.py        # make_conformalizer() + SEARCH_SPACES
 
 dataio/
@@ -105,7 +101,7 @@ pip install -r requirements.txt
 ```bash
 python main.py \
   --exp_level miso_system \
-  --methods NREL CQR NexCP KMeans KNN Kernel Periodic \
+  --methods NREL CQR NexCP KMeans KNN Kernel HopCPT \
   --covariates time weather \
   --test_window_days 7 \
   --flavor solar \

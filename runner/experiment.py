@@ -304,7 +304,7 @@ def run_one_site(
                 tune_override = None
 
             # Methods that can work with or without covariates
-            cov_flexible_methods = {"kmeans", "knn", "kernel", "hopcpt", "fea"}
+            cov_flexible_methods = {"kmeans", "knn", "kernel", "hopcpt"}
 
             # Determine if this method should use covariate selection
             if mkey in cov_flexible_methods:
