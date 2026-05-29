@@ -198,3 +198,15 @@ conf = make_conformalizer("knn", **best_params, value_bounds=(0.0, 1.0))
   - **Winkler score** — width + miscoverage penalty, lower is better
 
 
+## Citation
+
+If you use this code, please cite our paper:
+
+```bibtex
+@article{moradi2025enhanced,
+  title={Enhanced Renewable Energy Forecasting using Context-Aware Conformal Prediction},
+  author={Moradi, Alireza and Tanneau, Mathieu and Zandehshahvar, Reza and Van Hentenryck, Pascal},
+  journal={arXiv preprint arXiv:2510.15780},
+  year={2025}
+}
+```
