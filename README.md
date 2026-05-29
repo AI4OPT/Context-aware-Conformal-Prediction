@@ -201,17 +201,4 @@ conf = make_conformalizer("knn", **best_params, value_bounds=(0.0, 1.0))
   - **AIW** — average interval width
   - **Winkler score** — width + miscoverage penalty, lower is better
 
----
 
-## Citation
-
-If you use this code, please cite the NREL PERFORM benchmark and the relevant method papers.
-
-```bibtex
-@misc{nrel_perform,
-  title  = {PERFORM: Probabilistic Energy Forecasting Reliability Metrics},
-  author = {NREL},
-  year   = {2022},
-  url    = {https://github.com/nrel/PERFORM}
-}
-```
